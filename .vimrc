@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 set hidden
 set incsearch
+set hlsearch
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -22,6 +23,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'elzr/vim-json'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,7 +65,7 @@ let g:pymode_doc_key = 'K'
 
 "Linting
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checker = "pep8"
 " Auto check on save
 let g:pymode_lint_write = 1
 
@@ -112,7 +115,19 @@ let g:netrw_liststyle=3
 
 " vim NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-a> :NERDTreeFocus<CR>
+let NERDTreeMapOpenInTab='<leader>g'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Automatically fix PEP8 errors in the current buffer
 nmap <C-c> :PymodeLintAuto<CR>
+
+" Shortcuts to open the current file in the browser, mainly used for rendering
+" an html file
+nmap <silent> <leader>r :!open %
+
+" Shortcuts of Tagbar
+nmap <C-m> :TagbarToggle<CR>
+nmap <C-j> :TagbarOpen j<CR>
+
+" set clipboard=unnamedplus
