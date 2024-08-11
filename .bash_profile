@@ -11,35 +11,12 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 #alias for frequently used directory
-alias tow="cd /Users/wenyuzhang/Workspace/tow"
-alias gameserver="cd /Users/wenyuzhang/Workspace/game_server"
-alias webapp="cd /Users/wenyuzhang/Workspace/webapp"
-alias dragons="cd /Users/wenyuzhang/Workspace/dragons3d"
 alias home="cd ~"
-#change default vim 
-alias vim="/usr/local/Cellar/macvim/8.0-145_1/bin/mvim -v"
 
 set -o vi
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
-
-
-# The next line updates PATH for the Google Cloud SDK.
-#source '/Users/wenyuzhang/google-cloud-sdk/path.bash.inc'
-
-# The next line enables shell command completion for gcloud.
-#source '/Users/wenyuzhang/google-cloud-sdk/completion.bash.inc'
-
-export PYTHONPATH="$PYTHONPATH:/usr/local/google_appengine"
-
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home"
-
-# add general tools
-export PATH="/usr/local/opt/openssl/bin:$PATH:/Users/wenyuzhang/Workspace/common_tools/:/usr/local/lib/"
-
-# export EDITOR
-export EDITOR="/usr/local/Cellar/macvim/8.0-134/bin/mvim -v"
 
 
 # git branch
@@ -62,14 +39,3 @@ ptouch() {
   done
 }
 
-# launch ssh-agent
-ssh-add -K /Users/wenyuzhang/.ssh/id_rsa
-
-# remaining
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/wenyuzhang/google-cloud-sdk/path.bash.inc' ]; then source '/Users/wenyuzhang/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/wenyuzhang/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/wenyuzhang/google-cloud-sdk/completion.bash.inc'; fi
